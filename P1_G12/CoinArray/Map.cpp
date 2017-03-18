@@ -1,4 +1,4 @@
-#include "CoinArray.h"
+#include "CoinRace.h"
 #include <iostream>
 
 // Constructor de Map: En aquest cridem el "constructor de variables" i donem valors a nRows i nColumns, 
@@ -31,5 +31,17 @@ void Map::drawMap()
 			std::cout << mapArray[i][j] << " ";
 		}
 		std::cout << std::endl;
+	}
+}
+
+// Omple totes les graelles del mapa amb punts
+void Map::fillDots()
+{
+	for(int i=0;i<nRows;i++)
+	{
+		for(int j=0;j<nColumns;j++)
+		{
+			mapArray[i][j] = '.';
+		}
 	}
 }

@@ -13,6 +13,9 @@ public:
 	// Mètode que imprimeix el mapa per pantalla
 	void drawMap();
 
+	// EXTRA: Mètode que omple tots els espais del mapa amb ".". 
+	void fillDots();
+
 private:
 
 	// Nombre de files del nostre mapa
@@ -32,6 +35,9 @@ public:
 
 	// Constructor Player
 	Player(int Rows, int Columns, char** map);
+
+	// Mètode que actualitza la posició del jugador
+	void updatePosition(Key pressedKey);
 
 private:
 
