@@ -2,6 +2,8 @@
 #include <ctime>
 #include <conio.h>
 #include "Map.h"
+#include "CoinManager.h"
+#include "Player.h"
 #include "Input.h"
 
 void main() 
@@ -13,6 +15,8 @@ void main()
 	int gD; // gD: Aquesta variable guardarà el valor de la Dificultat del joc.
 
 	int coinsToWin; // coinsToWin: Guarda el nombre de monedes necessaries per a completar la partida.
+
+	bool difficultyCorrect=false; // difficultyCorrect: Boolea que ens serivirà per saber si la dificultat introduida és correcte.
 
 	Input::Key pressedKey; // pressedKey: Aquesta variable guardarà la tecla presa pel jugador
 
@@ -26,11 +30,23 @@ void main()
 	std::cout << "1 - FACIL" << std::endl;
 	std::cout << "2 - MITJANA" << std::endl;
 	std::cout << "3 - DIFICIL" << std::endl;
-	std::cin >> gD;
+	while(difficultyCorrect==false)
+	{
+		std::cin >> gD;
+		if(gD<1 || gD>3)
+		{
+			std::cout << "DIFICULTAT INCORRECTE, TORNA A INTRODUIR-LA" << std::endl;
+		}
+		else
+		{
+			difficultyCorrect = true;
+		}
+	}
 	coinsToWin = rand()% ((30*gD)+1)+(30*gD); // Inicialitza el valor de les monedes entre 30*gD i 30*2*gD. Com que anteriorment utilitzem srand(), el nombre serà aleatori en cada execució.
 	Map actualMap(gD);
 	actualMap.fillDots(); // Totes les graelles del mapa s'inicialitzaràn com a punts per defecte.
 	actualMap.drawMap();
+	CoinManager coinManaging(actualMap);
 
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
 }

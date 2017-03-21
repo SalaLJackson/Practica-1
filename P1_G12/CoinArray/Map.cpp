@@ -45,3 +45,16 @@ void Map::fillDots()
 		}
 	}
 }
+
+// Un getter que retorna el nombre de files del mapa
+int Map::rowGetter()
+{
+	return nRows;
+}
+
+// Un getter que retorna el nombre de columnes del mapa
+
+int Map::columnGetter()
+{
+	return nColumns;
+}

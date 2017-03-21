@@ -7,7 +7,7 @@ public:
 	Player(int Rows, int Columns, char** map);
 
 	// Mètode que actualitza la posició del jugador
-	void updatePosition(Input::Key pressedKey);
+	// void updatePosition(Input::Key pressedKey);
 
 private:
 
