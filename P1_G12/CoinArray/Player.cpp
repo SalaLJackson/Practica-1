@@ -26,3 +26,8 @@ Player::Player(int Rows, int Columns, char** map)
 	} 
 	map[Player1.x][Player1.y] = '@';
 }
+
+Player::updatePosition()
+{
+	
+}
