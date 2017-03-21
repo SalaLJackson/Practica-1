@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <conio.h>
+#include <cstdlib>
 #include "Map.h"
 #include "CoinManager.h"
 #include "Player.h"
@@ -45,8 +46,9 @@ void main()
 	coinsToWin = rand()% ((30*gD)+1)+(30*gD); // Inicialitza el valor de les monedes entre 30*gD i 30*2*gD. Com que anteriorment utilitzem srand(), el nombre serà aleatori en cada execució.
 	Map actualMap(gD);
 	actualMap.fillDots(); // Totes les graelles del mapa s'inicialitzaràn com a punts per defecte.
+	system("cls");
 	actualMap.drawMap();
-	CoinManager coinManaging(actualMap);
+	CoinManager coinManaging(actualMap,coinsToWin);
 
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
 }

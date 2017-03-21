@@ -17,8 +17,12 @@ public:
 
 	// EXTRA: Utilitzarem aquest getter per a que altres classes no "Map" puguin obtenir el nombre de files
 	int rowGetter();
+
 	// EXTRA: Utilitzarem aquest getter per a que altres classes no "Map" puguin obtenir el nombre de columnes
 	int columnGetter();
+
+	// EXTRA: Utilizarem aquesta funció per a veure el contingut d'una graella.
+	char viewContent(int i, int j);
 
 private:
 

@@ -58,3 +58,10 @@ int Map::columnGetter()
 {
 	return nColumns;
 }
+
+// Retorna el contingut d'un punt en el mapa
+
+char Map::viewContent(int i, int j)
+{
+	return mapArray[i][j];
+}
