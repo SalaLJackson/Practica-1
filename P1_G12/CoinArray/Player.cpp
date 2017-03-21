@@ -1,4 +1,4 @@
-#include "CoinRace.h"
+#include "Player.h"
 #include "Input.h"
 #include <conio.h>
 #include <iostream>

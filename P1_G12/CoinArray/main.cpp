@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <conio.h>
-#include "CoinRace.h"
+#include "Map.h"
 #include "Input.h"
 
 void main() 
@@ -14,7 +14,7 @@ void main()
 
 	int coinsToWin; // coinsToWin: Guarda el nombre de monedes necessaries per a completar la partida.
 
-	Key pressedKey; // pressedKey: Aquesta variable guardarà la tecla presa pel jugador
+	Input::Key pressedKey; // pressedKey: Aquesta variable guardarà la tecla presa pel jugador
 
 	// Imprimim els missatges d'introducció:
 	// El títol, els controls i el selector de dificultat

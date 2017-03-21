@@ -1,4 +1,4 @@
-#include "CoinRace.h"
+#include "Map.h"
 #include <iostream>
 
 // Constructor de Map: En aquest cridem el "constructor de variables" i donem valors a nRows i nColumns, 
