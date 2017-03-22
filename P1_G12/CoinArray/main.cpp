@@ -49,15 +49,15 @@ void main()
 	system("cls");
 	actualMap.drawMap();
 	system("cls");
-	CoinManager coinManaging(actualMap,coinsToWin);
 	Player myPlayer(actualMap);
+	CoinManager coinManaging(actualMap,coinsToWin);
 	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
 	while(coinsToWin>0)
 	{
-		if(Input::getKey()!=Input::Key::NONE)
+		pressedKey = Input::getKey();
+		if(pressedKey!=Input::Key::NONE)
 		{
-			pressedKey = Input::getKey();
 			myPlayer.updatePosition(pressedKey, actualMap);
 			system("cls");
 			actualMap.drawMap();
