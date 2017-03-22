@@ -50,6 +50,12 @@ void main()
 	actualMap.drawMap();
 	system("cls");
 	CoinManager coinManaging(actualMap,coinsToWin);
+	Player myPlayer(actualMap);
 	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
+	while(gD>0)
+	{
+
+		gD--; 
+	}
 }

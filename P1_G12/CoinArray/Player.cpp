@@ -6,15 +6,18 @@
 
 // Constructor de Player: Aquest constructor inicialitza la posició del jugador, ho sigui, que inicialitza "x" i "y" de l'struct Player1.
 // Després d'això, fica una arroba a la posició definida enteriorment, de manera que l'usuari podrà veure la seva posició en el mapa.
-Player::Player(int Rows, int Columns, char** map)
+Player::Player(Map &m):myMap{ m }
 {
 	bool freeSpace = false;
-	int i = 0, j = 0;
-	while(freeSpace==false)
+	int Rows = m.rowGetter();
+	int Columns = m.columnGetter();
+	int i = rand() % Rows;
+	int j = rand() % Columns;
+	while(freeSpace==false && i<Rows)
 	{
-		while(freeSpace==false)
+		while(freeSpace==false && j<Columns)
 		{
-			if(map[i][j]=='.')
+			if(m.viewContent(i,j)=='.')
 			{
 				Player1.x = i;
 				Player1.y = j;
@@ -24,7 +27,7 @@ Player::Player(int Rows, int Columns, char** map)
 		}
 		i++;
 	} 
-	map[Player1.x][Player1.y] = '@';
+	m.graellaModifier(i, j, '@');
 }
 
 void Player::updatePosition(Input::Key pressedKey)
