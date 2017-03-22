@@ -53,9 +53,15 @@ void main()
 	Player myPlayer(actualMap);
 	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
-	while(gD>0)
+	while(coinsToWin>0)
 	{
-
-		gD--; 
+		if(Input::getKey()!=Input::Key::NONE)
+		{
+			pressedKey = Input::getKey();
+			myPlayer.updatePosition(pressedKey, actualMap);
+			system("cls");
+			actualMap.drawMap();
+			std::cout << "La teva puntuacio és de: " << myPlayer.getPuntuacio() << std::endl;
+		}
 	}
 }

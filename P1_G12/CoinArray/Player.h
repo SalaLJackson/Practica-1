@@ -11,7 +11,10 @@ public:
 	Player(Map &mapClass);
 
 	// Mètode que actualitza la posició del jugador
-	void updatePosition(Input::Key pressedKey);
+	void updatePosition(Input::Key pressedKey, Map &m);
+
+	// Getter de la puntuació
+	int getPuntuacio();
 
 private:
 
@@ -24,4 +27,7 @@ private:
 	estructuraPlayer Player1;
 
 	Map &myMap;
+
+	// Nombre de monedes recollides.
+	int puntuacio;
 };

@@ -30,27 +30,59 @@ Player::Player(Map &m):myMap{ m }
 	m.graellaModifier(i, j, '@');
 }
 
-void Player::updatePosition(Input::Key pressedKey)
+void Player::updatePosition(Input::Key pressedKey, Map &m)
 {
 	int nextPosition;
-	int actualPosition;
 	switch(pressedKey)
 	{
 		case(Input::Key::W):
 		{
-			
+			nextPosition = m.viewContent(Player1.x,Player1.y+1);
+			if(nextPosition=='$')
+			{
+				puntuacio++;
+			}
+			Player1.y = Player1.y + 1;
+			m.graellaModifier(Player1.x, Player1.y, '@');
+			m.graellaModifier(Player1.x, Player1.y-1, '.');
 		}
 		case(Input::Key::A):
 		{
-			
+			nextPosition = m.viewContent(Player1.x-1, Player1.y);
+			if (nextPosition == '$')
+			{
+				puntuacio++;
+			}
+			Player1.y = Player1.x + 1;
+			m.graellaModifier(Player1.x, Player1.y, '@');
+			m.graellaModifier(Player1.x-1, Player1.y, '.');
 		}
 		case(Input::Key::S):
 		{
-			
+			nextPosition = m.viewContent(Player1.x, Player1.y-1);
+			if (nextPosition == '$')
+			{
+				puntuacio++;
+			}
+			Player1.y = Player1.y - 1;
+			m.graellaModifier(Player1.x, Player1.y, '@');
+			m.graellaModifier(Player1.x, Player1.y+1, '.');
 		}
 		case(Input::Key::D):
 		{
-
+			nextPosition = m.viewContent(Player1.x+1, Player1.y);
+			if (nextPosition == '$')
+			{
+				puntuacio++;
+			}
+			Player1.y = Player1.x - 1;
+			m.graellaModifier(Player1.x, Player1.y, '@');
+			m.graellaModifier(Player1.x+1, Player1.y, '.');
 		}
 	}
+}
+
+int Player::getPuntuacio()
+{
+	return puntuacio;
 }
