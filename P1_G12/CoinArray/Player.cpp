@@ -32,5 +32,25 @@ Player::Player(Map &m):myMap{ m }
 
 void Player::updatePosition(Input::Key pressedKey)
 {
-	
+	int nextPosition;
+	int actualPosition;
+	switch(pressedKey)
+	{
+		case(Input::Key::W):
+		{
+			
+		}
+		case(Input::Key::A):
+		{
+			
+		}
+		case(Input::Key::S):
+		{
+			
+		}
+		case(Input::Key::D):
+		{
+
+		}
+	}
 }
