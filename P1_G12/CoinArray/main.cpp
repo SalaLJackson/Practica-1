@@ -48,7 +48,8 @@ void main()
 	actualMap.fillDots(); // Totes les graelles del mapa s'inicialitzaràn com a punts per defecte.
 	system("cls");
 	actualMap.drawMap();
+	system("cls");
 	CoinManager coinManaging(actualMap,coinsToWin);
-
+	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
 }

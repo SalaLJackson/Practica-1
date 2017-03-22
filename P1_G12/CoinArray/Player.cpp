@@ -27,7 +27,7 @@ Player::Player(int Rows, int Columns, char** map)
 	map[Player1.x][Player1.y] = '@';
 }
 
-//void Player::updatePosition()
-//{
+void Player::updatePosition(Input::Key pressedKey)
+{
 	
-//}
+}

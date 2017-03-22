@@ -7,6 +7,9 @@ public:
 	// Constructor CoinManager
 	CoinManager(Map &mapClass,int coinsToWin);
 
+	// Mètode que permet eliminar una moneda i en cas de que no n'hi hagin més en el mapa, torna a ficar-ne
+	void coinUpdate(Map &mapClass,int xPosition,int yPosition,int actCoins,int numCoins);
+
 private:
 
 	// Així, creem un objecte de classe Map com a referencie en la nostra classe CoinManager, així fent que al inicialitzar aquest objecte en el constructor,
