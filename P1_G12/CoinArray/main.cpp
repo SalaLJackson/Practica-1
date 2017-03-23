@@ -50,7 +50,7 @@ void main()
 	actualMap.drawMap();
 	system("cls");
 	CoinManager coinManaging(actualMap,coinsToWin);
-	Player myPlayer(actualMap);
+	//Player myPlayer(actualMap);
 	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
 	while(coinsToWin>0)
@@ -58,10 +58,10 @@ void main()
 		if(Input::getKey()!=Input::Key::NONE)
 		{
 			pressedKey = Input::getKey();
-			myPlayer.updatePosition(pressedKey, actualMap);
+			//myPlayer.updatePosition(pressedKey, actualMap);
 			system("cls");
 			actualMap.drawMap();
-			std::cout << "La teva puntuacio és de: " << myPlayer.getPuntuacio() << std::endl;
+			//std::cout << "La teva puntuacio és de: " << myPlayer.getPuntuacio() << std::endl;
 		}
 	}
 }

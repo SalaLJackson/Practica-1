@@ -6,6 +6,7 @@
 
 // Constructor de Player: Aquest constructor inicialitza la posició del jugador, ho sigui, que inicialitza "x" i "y" de l'struct Player1.
 // Després d'això, fica una arroba a la posició definida enteriorment, de manera que l'usuari podrà veure la seva posició en el mapa.
+/*
 Player::Player(Map &m):myMap{ m }
 {
 	bool freeSpace = false;
@@ -85,4 +86,4 @@ void Player::updatePosition(Input::Key pressedKey, Map &m)
 int Player::getPuntuacio()
 {
 	return puntuacio;
-}
+}*/
