@@ -16,6 +16,12 @@ public:
 	// Getter numcoins
 	int numCoinsGetter();
 
+	// Setter numcoins
+	void numCoinsSetter(int n);
+
+	// Decrementa actCoins
+	void actCoinsDec();
+
 private:
 
 	// Així, creem un objecte de classe Map com a referencie en la nostra classe CoinManager, així fent que al inicialitzar aquest objecte en el constructor,

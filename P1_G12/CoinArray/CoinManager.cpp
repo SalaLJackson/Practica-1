@@ -10,6 +10,7 @@ CoinManager::CoinManager(Map &m, int coinsToWin) :myMap{m}, numCoins{coinsToWin}
 	int nRows= m.rowGetter();
 	int nColumns = m.columnGetter();
 	actCoins= rand() % ((int)(nRows*nColumns*0.11))+((int)(nRows*nColumns*0.03));
+	numCoins = numCoins - actCoins;
 	int i;
 	int j;
 	int coinsCounter=0;
@@ -38,16 +39,16 @@ void CoinManager::coinUpdate(Map &m, int i, int j)
 		int nRows = m.rowGetter();
 		int nColumns = m.columnGetter();
 		actCoins = rand() % ((int)(nRows*nColumns*0.11)) + ((int)(nRows*nColumns*0.03));
-		int i;
-		int j;
+		int x;
+		int y;
 		int coinsCounter = 0;
 		while (coinsCounter != actCoins)
 		{
-			i = rand() % nRows;
-			j = rand() % nColumns;
-			if (m.viewContent(i, j) == '.')
+			x = rand() % nRows;
+			y = rand() % nColumns;
+			if (m.viewContent(x, y) == '.')
 			{
-				m.graellaModifier(i, j, '$');
+				m.graellaModifier(x, y, '$');
 				coinsCounter++;
 			}
 		}
@@ -63,4 +64,14 @@ int CoinManager::numCoinsGetter()
 int CoinManager::actCoinsGetter()
 {
 	return actCoins;
+}
+
+void CoinManager::actCoinsDec()
+{
+	actCoins--;
+}
+
+void CoinManager::numCoinsSetter(int n)
+{
+	numCoins = n;
 }

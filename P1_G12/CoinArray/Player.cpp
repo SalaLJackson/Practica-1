@@ -46,6 +46,11 @@ void Player::updatePosition(Input::Key pressedKey, Map &m, CoinManager &cm)
 					cm.coinUpdate(m, Player1.x - 1, Player1.y);
 				}
 				Player1.x--;
+				if(m.viewContent(Player1.x, Player1.y)=='$')
+				{
+					puntuacio++;
+					cm.actCoinsDec();
+				}
 				m.graellaModifier(Player1.x, Player1.y, '@');
 				m.graellaModifier(Player1.x + 1, Player1.y, '.');
 			}
@@ -62,6 +67,11 @@ void Player::updatePosition(Input::Key pressedKey, Map &m, CoinManager &cm)
 					cm.coinUpdate(m, Player1.x, Player1.y - 1);
 				}
 				Player1.y--;
+				if (m.viewContent(Player1.x, Player1.y) == '$')
+				{
+					puntuacio++;
+					cm.actCoinsDec();
+				}
 				m.graellaModifier(Player1.x, Player1.y, '@');
 				m.graellaModifier(Player1.x, Player1.y + 1, '.');
 			}
@@ -78,6 +88,11 @@ void Player::updatePosition(Input::Key pressedKey, Map &m, CoinManager &cm)
 					cm.coinUpdate(m, Player1.x + 1, Player1.y);
 				}
 				Player1.x++;
+				if (m.viewContent(Player1.x, Player1.y) == '$')
+				{
+					puntuacio++;
+					cm.actCoinsDec();
+				}
 				m.graellaModifier(Player1.x, Player1.y, '@');
 				m.graellaModifier(Player1.x - 1, Player1.y, '.');
 			}
@@ -94,10 +109,19 @@ void Player::updatePosition(Input::Key pressedKey, Map &m, CoinManager &cm)
 					cm.coinUpdate(m, Player1.x, Player1.y + 1);
 				}
 				Player1.y++;
+				if (m.viewContent(Player1.x, Player1.y) == '$')
+				{
+					puntuacio++;
+					cm.actCoinsDec();
+				}
 				m.graellaModifier(Player1.x, Player1.y, '@');
 				m.graellaModifier(Player1.x, Player1.y - 1, '.');
 			}
 			break;
+		}
+		case(Input::Key::ESC):
+		{
+			cm.numCoinsSetter(0);
 		}
 	}
 }
