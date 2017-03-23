@@ -8,10 +8,10 @@ class Player
 public:
 
 	// Constructor Player
-	Player(Map &mapClass);
+	Player(Map &mapClass, CoinManager &cm);
 
 	// Mètode que actualitza la posició del jugador
-	void updatePosition(Input::Key pressedKey, Map &m);
+	void updatePosition(Input::Key pressedKey, Map &m, CoinManager &cm);
 
 	// Getter de la puntuació
 	int getPuntuacio();
@@ -27,6 +27,8 @@ private:
 	estructuraPlayer Player1;
 
 	Map &myMap;
+
+	CoinManager &myCoinManager;
 
 	// Nombre de monedes recollides.
 	int puntuacio;
