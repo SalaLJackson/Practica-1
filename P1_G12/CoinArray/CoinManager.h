@@ -8,7 +8,19 @@ public:
 	CoinManager(Map &mapClass,int coinsToWin);
 
 	// Mètode que permet eliminar una moneda i en cas de que no n'hi hagin més en el mapa, torna a ficar-ne
-	void coinUpdate(Map &mapClass,int xPosition,int yPosition,int actCoins,int numCoins);
+	void coinUpdate(Map &mapClass,int xPosition,int yPosition);
+
+	// Getter actCoins
+	int actCoinsGetter();
+
+	// Getter numcoins
+	int numCoinsGetter();
+
+	// Setter numcoins
+	void numCoinsSetter(int n);
+
+	// Decrementa actCoins
+	void actCoinsDec();
 
 private:
 

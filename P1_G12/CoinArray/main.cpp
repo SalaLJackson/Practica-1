@@ -11,7 +11,7 @@ void main()
 {
 	// INICIALITZACIÓ-----------------------------------------------------------------------------------------------------------------------------
 
-	srand(static_cast<unsigned>(time(nullptr))); // Canvia la seed per a obtenir resultats diferents cada cop que el programa es executat.
+	srand(static_cast<unsigned>(2));// Canvia la seed per a obtenir resultats diferents cada cop que el programa es executat.
 
 	int gD; // gD: Aquesta variable guardarà el valor de la Dificultat del joc.
 
@@ -50,18 +50,22 @@ void main()
 	actualMap.drawMap();
 	system("cls");
 	CoinManager coinManaging(actualMap,coinsToWin);
-	//Player myPlayer(actualMap);
+	Player myPlayer(actualMap,coinManaging);
 	actualMap.drawMap();
 	// ACTUALITZACIÓ------------------------------------------------------------------------------------------------------------------------------
-	while(coinsToWin>0)
+	while(coinManaging.numCoinsGetter()>0)
 	{
-		if(Input::getKey()!=Input::Key::NONE)
+		pressedKey = Input::getKey();
+		if(pressedKey!=Input::Key::NONE)
 		{
-			pressedKey = Input::getKey();
-			//myPlayer.updatePosition(pressedKey, actualMap);
+			myPlayer.updatePosition(pressedKey, actualMap,coinManaging);
 			system("cls");
 			actualMap.drawMap();
-			//std::cout << "La teva puntuacio és de: " << myPlayer.getPuntuacio() << std::endl;
+			std::cout << "La teva puntuacio es de: " << myPlayer.getPuntuacio() << std::endl;
 		}
 	}
+	system("cls");
+	std::cout << "FELICITATS GUANYADOR" << std::endl;
+	std::cout << "Puntuacio: " << myPlayer.getPuntuacio() << std::endl;
+	std::cout << "Temps Invertit: " << clock()/1000 << " segons" << std::endl;
 }
