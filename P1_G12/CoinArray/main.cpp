@@ -65,7 +65,6 @@ void main()
 		}
 	}
 	system("cls");
-	std::cout << "FELICITATS GUANYADOR" << std::endl;
 	std::cout << "Puntuacio: " << myPlayer.getPuntuacio() << std::endl;
 	std::cout << "Temps Invertit: " << clock()/1000 << " segons" << std::endl;
 }
