@@ -2,7 +2,7 @@
 #include "Input.h"
 #include "CoinManager.h"
 #include "Map.h"
-/*
+
 class Player
 {
 public:
@@ -32,4 +32,4 @@ private:
 
 	// Nombre de monedes recollides.
 	int puntuacio;
-};*/
+};

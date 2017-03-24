@@ -11,7 +11,7 @@ void main()
 {
 	// INICIALITZACIÓ-----------------------------------------------------------------------------------------------------------------------------
 
-	srand(static_cast<unsigned>(2));// Canvia la seed per a obtenir resultats diferents cada cop que el programa es executat.
+	srand(static_cast<unsigned>(NULL));// Canvia la seed per a obtenir resultats diferents cada cop que el programa es executat.
 
 	int gD; // gD: Aquesta variable guardarà el valor de la Dificultat del joc.
 
